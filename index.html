@@ -65,9 +65,9 @@
 <div id="smaatoad1" style="padding:0px"></div>
 
 <!--MRAID-->
-<div class="fullAd" id="fullAd1">
+<div class="fullAd" id="fullAd3">
     <div id="smaatoad3" style="padding:0px"></div>
-    <div class="closeMain"  onclick="handleButtonClick('fullAd1')">
+    <div class="closeMain"  onclick="handleButtonClick('fullAd3')">
         <div class="closeTxt">closeAd</div>
         <div class="closebt">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
@@ -78,9 +78,9 @@
 
 <!--Rich Media / Video-->
 <!--MRAID-->
-<div class="fullAd" id="fullAd2">
+<div class="fullAd" id="fullAd4">
     <div id="smaatoad4" style="padding:0px"></div>
-    <div class="closeMain"  onclick="handleButtonClick('fullAd2')">
+    <div class="closeMain"  onclick="handleButtonClick('fullAd4')">
         <div class="closeTxt">closeAd</div>
         <div class="closebt">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
@@ -137,11 +137,8 @@
         age: 27
     }, myJSCallBack);
 
-    // showFullAd1()
-    function showFullAd1() {
-        isShow=true
-        document.getElementById('fullAd1').style.display = 'block';
-
+    // showFullAd3()
+    function showFullAd3() {
         SomaJS.loadAd({
             adDivId: "smaatoad3",
             publisherId: publisherId,
@@ -152,15 +149,20 @@
             keywords: "cars,shopping",
             gender: "m",
             age: 27
-        }, myJSCallBack);
+        }, myJSCallBack3);
     }
 
-
-    // showFullAd2()
-    function showFullAd2() {
-        isShow=true
-        document.getElementById('fullAd2').style.display = 'block';
-
+    function myJSCallBack3(status) {
+        if (status == "SUCCESS") {
+            isShow=true
+            document.getElementById('fullAd3').style.display = 'block';
+            // TODO Handle ad available (Option)
+        } else if (status == "ERROR") {
+            // TODO Handle not ad available
+        }
+    };
+    // showFullAd4()
+    function showFullAd4() {
         SomaJS.loadAd({
             adDivId: "smaatoad4",
             publisherId: publisherId,
@@ -171,15 +173,28 @@
             keywords: "cars,shopping",
             gender: "m",
             age: 27
-        }, myJSCallBack);
+        }, myJSCallBack4);
     }
+
+    function myJSCallBack4(status) {
+        if (status == "SUCCESS") {
+            isShow=true
+            document.getElementById('fullAd4').style.display = 'block';
+            // TODO Handle ad available (Option)
+        } else if (status == "ERROR") {
+            // TODO Handle not ad available
+        }
+    };
+
+
+    //按时间显示
     let num=0
     setInterval(function () {
         num++
         if(num % 2 == 0 && num>2 && !isShow){
-            showFullAd2()
+            showFullAd4()
         }else{
-            showFullAd1()
+            showFullAd3()
         }
     },30*1000)
 </script>
