@@ -68,8 +68,8 @@
 <!--MRAID-->
 <div class="fullAd" id="fullAd1">
     <div id="smaatoad3" style="padding:0px"></div>
-    <div class="closeMain"  onclick="handleButtonClick()">
-        <div class="closeTxt">Rewards issued</div>
+    <div class="closeMain"  onclick="handleButtonClick('fullAd1')">
+        <div class="closeTxt">closeAd</div>
         <div class="closebt">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
                  class="closeImg"><path d="M3.25,3.25l8.5,8.5M11.75,3.25l-8.5,8.5"></path></svg>
@@ -78,11 +78,28 @@
 </div>
 
 <!--Rich Media / Video-->
-<div id="smaatoad4" style="padding:0px"></div>
+<!--MRAID-->
+<div class="fullAd" id="fullAd2">
+    <div id="smaatoad4" style="padding:0px"></div>
+    <div class="closeMain"  onclick="handleButtonClick('fullAd2')">
+        <div class="closeTxt">closeAd</div>
+        <div class="closebt">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                 class="closeImg"><path d="M3.25,3.25l8.5,8.5M11.75,3.25l-8.5,8.5"></path></svg>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="https://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
 <script>
-    function handleButtonClick() {
-        document.getElementById('fullAd1').style.display = 'none';
+    let publisherId=1100042525
+    let  adSpaceId1=130626424
+    let  adSpaceId2=130635694
+    let  adSpaceId3=130635706
+    let  adSpaceId4=133150211
+
+    function handleButtonClick(val) {
+        document.getElementById(val).style.display = 'none';
     }
     function myJSCallBack(status) {
         if (status == "SUCCESS") {
@@ -94,8 +111,8 @@
     <!--Rich Media-->
         SomaJS.loadAd({
             adDivId: "smaatoad1",
-            publisherId: 1100042525,
-            adSpaceId: 133150211,
+            publisherId: publisherId,
+            adSpaceId: adSpaceId1,
             autoReload: 240,
             dimension: "xxlarge",
             dimensionstrict: true,
@@ -107,8 +124,8 @@
     <!--Static Image-->
     SomaJS.loadAd({
         adDivId: "smaatoad2",
-        publisherId: 1100042525,
-        adSpaceId: 133150211,
+        publisherId: publisherId,
+        adSpaceId: adSpaceId2,
         autoReload: 240,
         dimension: "xxlarge",
         dimensionstrict: true,
@@ -116,6 +133,41 @@
         gender: "m",
         age: 27
     }, myJSCallBack);
+
+    showFullAd1()
+    function showFullAd1() {
+        document.getElementById('fullAd1').style.display = 'block';
+
+        SomaJS.loadAd({
+            adDivId: "smaatoad3",
+            publisherId: publisherId,
+            adSpaceId: adSpaceId3,
+            autoReload: 0,
+            dimension: "full_640x960",
+            dimensionstrict: true,
+            keywords: "cars,shopping",
+            gender: "m",
+            age: 27
+        }, myJSCallBack);
+    }
+
+
+    showFullAd2()
+    function showFullAd2() {
+        document.getElementById('fullAd2').style.display = 'block';
+
+        SomaJS.loadAd({
+            adDivId: "smaatoad4",
+            publisherId: publisherId,
+            adSpaceId: adSpaceId4,
+            autoReload: 0,
+            dimension: "full_640x960",
+            dimensionstrict: true,
+            keywords: "cars,shopping",
+            gender: "m",
+            age: 27
+        }, myJSCallBack);
+    }
 </script>
 
 
