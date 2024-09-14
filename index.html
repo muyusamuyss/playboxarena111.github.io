@@ -42,7 +42,7 @@
             flex: 1;
             text-align: center;
             line-height: 32px;
-            padding: 0px 12px;
+            padding: 3px 3px 3px 20px;
         }
         .closebt{
             background: #363636;
@@ -66,9 +66,9 @@
 <!--Static Image-->
 <div id="smaatoad2" style="padding:0px"></div>
 <!--MRAID-->
-<div class="fullAd">
+<div class="fullAd" id="fullAd1">
     <div id="smaatoad3" style="padding:0px"></div>
-    <div class="closeMain">
+    <div class="closeMain"  onclick="handleButtonClick()">
         <div class="closeTxt">Rewards issued</div>
         <div class="closebt">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
@@ -81,6 +81,9 @@
 <div id="smaatoad4" style="padding:0px"></div>
 <script type="text/javascript" src="https://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
 <script>
+    function handleButtonClick() {
+        document.getElementById('fullAd1').style.display = 'none';
+    }
     function myJSCallBack(status) {
         if (status == "SUCCESS") {
             // TODO Handle ad available (Option)
