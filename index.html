@@ -10,11 +10,75 @@
     <script>var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
     document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')</script>
     <link rel=stylesheet href=/static/index.2da1efab.css>
+    <style>
+        .fullAd{
+            position: fixed;
+            z-index: 2147483647;
+            overflow: hidden;
+            font-size: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            background: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .closeMain{
+            display: flex;
+            position: absolute;
+            z-index: 999;
+            right: 16px;
+            top: 12px;
+            color: rgb(255, 255, 255);
+            background: rgb(57, 57, 57);
+            border-radius: 50px;
+        }
+        .closeTxt{
+            font-size: 12px;
+            flex: 1;
+            text-align: center;
+            line-height: 32px;
+            padding: 0px 12px;
+        }
+        .closebt{
+            background: #363636;
+            box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
+            margin-right: 4px;
+            margin-top: 4px;
+            border-radius: 50%;
+            height: 24px;
+            width: 24px;
+            display: inline-block;
+        }
+        .closeImg{
+            height:14px;width:14px;stroke:#E6E6E6;fill:#E6E6E6;stroke-width:1.25;line-height: 0;padding: 4px 5px 6px;
+        }
+    </style>
 </head>
 <body>
 
+<!--Rich Media-->
+<div id="smaatoad1" style="padding:0px"></div>
+<!--Static Image-->
+<div id="smaatoad2" style="padding:0px"></div>
+<!--MRAID-->
+<div class="fullAd">
+    <div id="smaatoad3" style="padding:0px"></div>
+    <div class="closeMain">
+        <div class="closeTxt">Rewards issued
+            <div class="closebt">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                     class="closeImg"><path d="M3.25,3.25l8.5,8.5M11.75,3.25l-8.5,8.5"></path></svg>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div id="smaatoad" style="padding:0px"></div>
+<!--Rich Media / Video-->
+<div id="smaatoad4" style="padding:0px"></div>
 <script type="text/javascript" src="https://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
 <script>
     function myJSCallBack(status) {
@@ -24,12 +88,26 @@
             // TODO Handle not ad available
         }
     };
+    <!--Rich Media-->
+        SomaJS.loadAd({
+            adDivId: "smaatoad1",
+            publisherId: 1100042525,
+            adSpaceId: 133150211,
+            autoReload: 240,
+            dimension: "xxlarge",
+            dimensionstrict: true,
+            keywords: "cars,shopping",
+            gender: "m",
+            age: 27
+        }, myJSCallBack);
+
+    <!--Static Image-->
     SomaJS.loadAd({
-        adDivId: "smaatoad",
+        adDivId: "smaatoad2",
         publisherId: 1100042525,
         adSpaceId: 133150211,
         autoReload: 240,
-        dimension: "full_320x480",
+        dimension: "xxlarge",
         dimensionstrict: true,
         keywords: "cars,shopping",
         gender: "m",
