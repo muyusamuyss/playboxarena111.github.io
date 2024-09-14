@@ -93,11 +93,11 @@
 
 <script type="text/javascript" src="https://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
 <script>
-    let publisherId=1100042525
-    let  adSpaceId1=130626424
-    let  adSpaceId2=130635694
-    let  adSpaceId3=130635706
-    let  adSpaceId4=133150211
+    let publisherId=1100057742
+    let  adSpaceId1=138010452
+    let  adSpaceId2=138010453
+    let  adSpaceId3=138010476
+    let  adSpaceId4=138013605
 
     function handleButtonClick(val) {
         document.getElementById(val).style.display = 'none';
@@ -135,7 +135,7 @@
         age: 27
     }, myJSCallBack);
 
-    showFullAd1()
+    // showFullAd1()
     function showFullAd1() {
         document.getElementById('fullAd1').style.display = 'block';
 
@@ -153,7 +153,7 @@
     }
 
 
-    showFullAd2()
+    // showFullAd2()
     function showFullAd2() {
         document.getElementById('fullAd2').style.display = 'block';
 
@@ -169,6 +169,15 @@
             age: 27
         }, myJSCallBack);
     }
+    let num=0
+    setInterval(function () {
+        num++
+        if(num%2==0){
+            showFullAd2()
+        }else{
+            showFullAd1()
+        }
+    },30*1000)
 </script>
 
 
