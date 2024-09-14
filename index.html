@@ -98,8 +98,10 @@
     let  adSpaceId2=138010453
     let  adSpaceId3=138010476
     let  adSpaceId4=138013605
+    let isShow=false
 
     function handleButtonClick(val) {
+        isShow=false
         document.getElementById(val).style.display = 'none';
     }
     function myJSCallBack(status) {
@@ -137,6 +139,7 @@
 
     // showFullAd1()
     function showFullAd1() {
+        isShow=true
         document.getElementById('fullAd1').style.display = 'block';
 
         SomaJS.loadAd({
@@ -155,6 +158,7 @@
 
     // showFullAd2()
     function showFullAd2() {
+        isShow=true
         document.getElementById('fullAd2').style.display = 'block';
 
         SomaJS.loadAd({
@@ -172,7 +176,7 @@
     let num=0
     setInterval(function () {
         num++
-        if(num % 2 == 0 && num>0){
+        if(num % 2 == 0 && num>0 && !isShow){
             showFullAd2()
         }else{
             showFullAd1()
