@@ -193,7 +193,11 @@
     let num=0
     setInterval(function () {
         num++
-        if(num % 2 == 0 && num>2 && !isShow){
+        if( num<2 && isShow){
+            return
+        }
+
+        if(num % 2 == 0 ){
             showFullAd4()
         }else{
             showFullAd3()
