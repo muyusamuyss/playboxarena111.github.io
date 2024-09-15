@@ -199,13 +199,11 @@
     let num=0
     setInterval(function () {
         num++
-        if( num<2 && isShow){
-            return
-        }
 
-        if(num % 2 == 0 ){
+
+        if(num % 2 == 0 && num>2 && !isShow){
             showFullAd4()
-        }else{
+        }else if( num>2 && !isShow){
             showFullAd3()
         }
     },30*1000)
